@@ -30,13 +30,13 @@ public class StartupRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        this.findAllPageableByRepo();
+        this.insert();
     }
 
     //#################### Using the mongo template ####################
     private void insert() {
         User user = new User();
-        user.setName("Jon");
+        user.setName("Heinz");
         System.out.println("Save user to database: " + user);
         user = mongoTemplate.insert(user, "user");
         System.out.println("Saved user to database: " + user);
